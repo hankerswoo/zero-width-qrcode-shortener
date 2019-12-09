@@ -12,7 +12,7 @@ function from10_to62($num) {
     do {
         $ret = $dict[bcmod($num, $to) ] . $ret;
         $num = bcdiv($num, $to);
-    } while ($num > 0);
+    } while ((int)$num > 0); //这里$num是浮点类型，必须强制转换为INT类型才可以跟INT(0)比大小。处理精度不足会出现意想不到的后果哦！！
     return $ret;
 }
 //10进制转58进制(不包含 0OlI 字符)
@@ -23,7 +23,7 @@ function from10_to58($num) {
     do {
         $ret = $dict[bcmod($num, $to) ] . $ret;
         $num = bcdiv($num, $to);
-    } while ($num > 0);
+    } while ((int)$num > 0); //这里$num是浮点类型，必须强制转换为INT类型才可以跟INT(0)比大小。处理精度不足会出现意想不到的后果哦！！
     return $ret;
 }
 //10进制转56进制(不包含 01OolI 字符)
@@ -34,7 +34,7 @@ function from10_to56($num) {
     do {
         $ret = $dict[bcmod($num, $to) ] . $ret;
         $num = bcdiv($num, $to);
-    } while ($num > 0);
+    } while ((int)$num > 0); //这里$num是浮点类型，必须强制转换为INT类型才可以跟INT(0)比大小。处理精度不足会出现意想不到的后果哦！！
     return $ret;
 }
 //10进制转空白不显字符
@@ -45,7 +45,7 @@ function from10_to_zerowidth($num) {
     do {
         $ret = $dict[bcmod($num, $to) ] . $ret;
         $num = bcdiv($num, $to);
-    } while ($num > 0);
+    } while ((int)$num > 0); //这里$num是浮点类型，必须强制转换为INT类型才可以跟INT(0)比大小。处理精度不足会出现意想不到的后果哦！！
     return $ret;
 }
 //文本生成二维码base64字符串
